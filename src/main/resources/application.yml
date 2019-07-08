@@ -1,0 +1,23 @@
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+    password:
+  profiles:
+    active: dev
+server:
+  port: 8081
+
+security:
+  authentication:
+    token:
+      storage: redis
+      expireMinutes: 30
+shiro:
+  annotations:
+    enabled: false
